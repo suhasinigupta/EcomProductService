@@ -5,6 +5,7 @@ import dev.suhasini.EcomProductService.dto.ProductResponseDto;
 import dev.suhasini.EcomProductService.entity.Product;
 import dev.suhasini.EcomProductService.exceptions.ProductNotFoundException;
 import dev.suhasini.EcomProductService.service.ProductService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ import java.util.List;
 public class ProductController {
     private ProductService productService ;
 
-    public ProductController(ProductService productService) {
+    public ProductController(@Qualifier("productDBService") ProductService productService) {
         this.productService = productService;
     }
 

@@ -17,7 +17,7 @@ public class ProductResponseDto {
 
     public static ProductResponseDto from(Product product){
               ProductResponseDto productResponseDto = new ProductResponseDto();
-              productResponseDto.setId(5) ;
+              productResponseDto.setId(product.getId()); ;
               productResponseDto.setName(product.getName()) ;
               productResponseDto.setDescription(product.getDescription()) ;
               productResponseDto.setImageURL(product.getImageURL()) ;
